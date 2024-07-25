@@ -149,7 +149,7 @@ codeunit 324 "No. Series Copilot Impl."
         AzureKeyVault: Codeunit "Azure Key Vault";
         ToolsSelectionPrompt: Text;
     begin
-        if not AzureKeyVault.GetAzureKeyVaultSecret('ToolsSelectionPrompt', ToolsSelectionPrompt) then begin
+        if not AzureKeyVault.GetAzureKeyVaultSecret('NoSeriesCopilotToolsSelectionPrompt', ToolsSelectionPrompt) then begin
             Telemetry.LogMessage('', TelemetryToolsSelectionPromptRetrievalErr, Verbosity::Error, DataClassification::SystemMetadata);
             Error(ToolLoadingErr);
         end;
