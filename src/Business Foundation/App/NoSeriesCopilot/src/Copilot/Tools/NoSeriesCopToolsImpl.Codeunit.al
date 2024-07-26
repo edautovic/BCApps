@@ -167,6 +167,9 @@ codeunit 336 "No. Series Cop. Tools Impl."
 
     local procedure IsSetupTable(var TableMetadata: Record "Table Metadata"): Boolean
     begin
+        if not HasPermissionToReadTable(TableMetadata) then
+            exit(false);
+
         if not IsOnlyOneRecord(TableMetadata) then
             exit(false);
 
@@ -174,6 +177,14 @@ codeunit 336 "No. Series Cop. Tools Impl."
             exit(false);
 
         exit(true);
+    end;
+
+    local procedure HasPermissionToReadTable(var TableMetadata: Record "Table Metadata"): Boolean
+    var
+        RecRef: RecordRef;
+    begin
+        RecRef.Open(TableMetadata.ID);
+        exit(RecRef.ReadPermission() and RecRef.WritePermission());
     end;
 
     local procedure IsOnlyOneRecord(var TableMetadata: Record "Table Metadata"): Boolean
