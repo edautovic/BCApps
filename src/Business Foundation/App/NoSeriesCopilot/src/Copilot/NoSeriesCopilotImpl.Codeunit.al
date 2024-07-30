@@ -222,6 +222,7 @@ codeunit 324 "No. Series Copilot Impl."
             CurrentAICallNumber += 1;
 
             AOAIChatCompletionParams.SetTemperature(0);
+            AOAIChatCompletionParams.SetMaxTokens(MaxOutputTokens());
             AOAIChatMessages.SetPrimarySystemMessage(SystemPrompt);
             AOAIChatMessages.AddUserMessage(InputText);
             AOAIChatMessages.AddTool(NoSeriesGenerateTool);
