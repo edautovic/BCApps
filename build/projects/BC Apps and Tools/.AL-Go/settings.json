@@ -1,10 +1,12 @@
 {
-    "projectName": "System Application and Tools",
+    "projectName": "BC Apps and Tools",
     "appFolders":  [
         "../../../src/System Application/App",
+        "../../../src/Business Foundation/App",
         "../../../src/Tools/AI Test Toolkit",
         "../../../src/Tools/Test Framework/Test Libraries/*",
-        "../../../src/Tools/Test Framework/Test Runner"
+        "../../../src/Tools/Test Framework/Test Runner",
+        "../../../src/Tools/Performance Toolkit/App"
     ],
     "buildModes": [ "Translated" ],
     "doNotRunTests": true,

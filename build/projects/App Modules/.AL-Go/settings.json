@@ -1,5 +1,5 @@
 {
-    "projectName": "System Application Modules",
+    "projectName": "App Modules",
     "appFolders":  [
         "../../../src/System Application/App/*",
         "../../../src/Business Foundation/App/*"
